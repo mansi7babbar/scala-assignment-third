@@ -11,7 +11,7 @@ object VowelSubstrings extends App {
       }
       else {
         if (str(index) == 'a' || str(index) == 'e' || str(index) == 'i' || str(index) == 'o' || str(index) == 'u') {
-          sum(0) = sum(0) + (index + 1) + ((index + 1) * (str.length - 1 - index))
+          sum(0) += (index + 1)*(str.length - index)
         }
         subStringRecursive(str, sum, index + 1)
       }
@@ -22,5 +22,6 @@ object VowelSubstrings extends App {
   }
 
   val str: String = scala.io.StdIn.readLine("Enter the string: ")
-  println("Sum of vowels present in all the possible substrings of the string: " + subString(str))
+  println("Sum of vowels present in all the possible substrings of the string: " + subString(str.toLowerCase()))
 }
+
